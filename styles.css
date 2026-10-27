@@ -1,0 +1,73 @@
+
+html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: monospace;
+}
+
+.background-video {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    background-color: black;
+    z-index: -1;
+}
+
+.centered-text {
+    text-align: center;
+    font-size: min(8vw, 200px);
+    color: white;
+    text-shadow: 6px 6px 6px rgb(2, 2, 2);
+
+    max-width: 95vw;
+    white-space: normal;
+    overflow-wrap: break-word;
+    line-height: 1.1;
+
+    z-index: 1;
+}
+
+#muteButton {
+    position: fixed;
+    top: calc(50% + clamp(35px, 8vw, 70px));
+    left: 50%;
+    transform: translateX(-50%);
+
+    padding: clamp(8px, 1.5vw, 12px)
+             clamp(16px, 3vw, 24px);
+
+    font-size: clamp(12px, 2vw, 16px);
+
+    color: white;
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid white;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+#muteButton:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 480px) {
+    .centered-text {
+        font-size: clamp(20px, 7.5vw, 36px);
+        max-width: 98vw;
+    }
+
+    #muteButton {
+        top: calc(50% + 45px);
+    }
+}

@@ -7,6 +7,12 @@ function toggleMute() {
     muteButton.textContent = video.muted ? "Unmute Audio" : "Mute Audio";
 }
 
+window.addEventListener("load", () => {
+    t = Date.now() / 1000;
+    video.currentTime = (t % video.duration);
+    video.play();
+});
+
 function animate(timestamp) {
     const target = new Date("2026-11-10T09:00:00").getTime();
 
